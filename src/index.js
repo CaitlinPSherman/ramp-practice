@@ -5,9 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// const arr = [1, 2, 3]
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App  />
   </React.StrictMode>
 );
 

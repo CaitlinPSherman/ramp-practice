@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+//create a React component that accepts an "input" prop.
+//If the "input" prop is falsy, render a live-updating
+//date and time that updates every second.
+//If the "input" prop is an array, render the array's
+//elements in a list. If the "input" prop is anything
+//else, render the value in a <div>.
 
-function App() {
+import DateTime from "./DateTime.js";
+import List from "./List.js";
+
+export default function App({ input }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {input ? (
+        Array.isArray(input) ? (
+          <List array={input} />
+        ) : (
+          <div>{input}</div>
+        )
+      ) : (
+        <DateTime />
+      )}
     </div>
   );
 }
-
-export default App;
